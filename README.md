@@ -1,5 +1,5 @@
 ### INTRO
-- Uses both static analysis and machine learning approach to identify malicious URL in real-time. As well delivering website-specific data
+- Chrome extension that uses both static analysis and machine learning approach to identify malicious URL in real-time. As well delivering website-specific data
 
 
 ### TODO
@@ -15,5 +15,5 @@
 - Use Cliqz's database of trackers to identify trackers from requests
 
 
-### Tutorials to get started:
+### Chrome extension tutorial to get started:
 - https://medium.com/@gilfink/building-a-chrome-extension-using-react-c5bfe45aaf36
