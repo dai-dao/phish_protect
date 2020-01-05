@@ -1,9 +1,8 @@
 ### INTRO
-- Chrome extension that uses both static analysis and machine learning approach to identify malicious URL in real-time. As well delivering website-specific data
+- Chrome extension that uses both static analysis, block-list based and machine learning approach to identify malicious URLs in real-time
 
 
 ### TODO
-- Use Cliqz's database of trackers to identify trackers from requests and BLOCK
 - Build URL classifier for malicious URL
     - Deploy on GCP
     - Call API and get result
@@ -11,8 +10,9 @@
 - Add Malicious JavaScript detection
 
 
-### Ideas
-- Use Cliqz's database of trackers to identify trackers from requests
+### Features
+- Use block-list based approach to block malicious URLs
+    - https://developers.google.com/safe-browsing/?csw=1
 
 
 ### Chrome extension tutorial to get started:

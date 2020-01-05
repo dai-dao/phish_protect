@@ -1,7 +1,7 @@
 /*global chrome*/
 import React, { Component } from 'react';
 import URLInfoContainer from "./components/URLInfoContainer"
-import TrafficContainer from "./components/TrafficContainer"
+// import TrafficContainer from "./components/TrafficContainer"
 import { getCurrentTab } from "./common/Utils";
 
 
@@ -10,17 +10,19 @@ class App extends Component {
         super(props);
         this.state = {
             current_url : "",
-            traffic: {}
+            traffic: {},
+            current_url_status : "",
         };
     }
 
     componentDidMount() {
-        getCurrentTab((tab) => {
+        getCurrentTab((tab, url_status_response) => {
             chrome.runtime.sendMessage({type: 'popupInit', tabId: tab.id}, (response) => {
                 if (response) {
                     this.setState({
                         current_url : tab.url,
-                        traffic: Object.assign(this.state.traffic, response)
+                        traffic: Object.assign(this.state.traffic, response),
+                        current_url_status : url_status_response.data.hasOwnProperty("matches") ? "Malicious" : "Safe"
                     });
                 }
             });
@@ -35,7 +37,8 @@ class App extends Component {
             </header>
             <p className="App-intro">
                 <URLInfoContainer current_url={this.state.current_url}/>
-                <TrafficContainer traffic={this.state.traffic}/>
+                <p>Google Safe Browing check: {this.state.current_url_status}</p>
+                {/* <TrafficContainer traffic={this.state.traffic}/> */}
             </p>
           </div>
         );
