@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+
+  "name": "Phishing Protector",
+  "description": "This extension identifies threats in websites",
+  "version": "0.0.1",
+
+  "browser_action": {
+    "default_popup": "index.html",
+    "default_title": "Open the popup"
+  },
+  "content_security_policy": "script-src 'self' 'sha256-tisWBIZYRxxwoy/s3oK4Qc2PKhsF4Ssh+cDsdVD0iLY='; object-src 'self'",
+  "background": {
+    "scripts": ["app/background.js"]
+  },
+  "permissions": [
+    "tabs",
+    "webRequest",
+    "http://*/*",
+    "https://*/*"
+  ]
+}
